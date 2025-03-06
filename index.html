@@ -1,70 +1,251 @@
-/* Made By UndercoverGoose */
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc mừng ngày 8/3 - Euro Santé</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf2f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .header {
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      color: #db2777;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    
+    h2 {
+      color: #9333ea;
+      font-size: 20px;
+      margin-top: 0;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .person-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .person-button {
+      background-color: #fdf2f8;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #111827;
+    }
+    
+    .person-button:hover {
+      background-color: #fbcfe8;
+    }
+    
+    .wish-title {
+      color: #db2777;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .wish-text {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    
+    .back-button {
+      background-color: #9333ea;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .back-button:hover {
+      background-color: #7e22ce;
+    }
+    
+    .footer {
+      margin-top: 20px;
+      color: #6b7280;
+    }
 
-let autoclick = false;
-if(location.href.indexOf("flashcards") !== -1) {
-  (function(){ //Grabs quizizz answers (requires flashcards)
-    answers=[];
-    questions=[];
-    function xr(x){
-      if(document.getElementsByClassName("question-text")[x].parentNode.childNodes[1]!==undefined){
-        return document.getElementsByClassName("question-text")[x].parentNode.childNodes[1].src.split("?")[0];
-      }else{
-        return "";
+    .links-section {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .copy-field {
+      display: flex;
+      margin-bottom: 8px;
+    }
+
+    .copy-input {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px 0 0 6px;
+      font-size: 14px;
+    }
+
+    .copy-button {
+      background-color: #9333ea;
+      color: white;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .link-list {
+      margin-top: 16px;
+    }
+
+    .link-item {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Chúc mừng ngày Quốc tế Phụ nữ 8/3!</h1>
+      <h2>Công ty cổ phần dược phẩm Euro Santé</h2>
+    </div>
+    
+    <div id="home-page" class="card">
+      <h3 style="color: #9333ea; margin-top: 0; margin-bottom: 16px;">Chọn tên của bạn để nhận lời chúc:</h3>
+      <div class="person-list">
+        <a href="?name=TranMo" class="person-button">🌷 Trần Mơ</a>
+        <a href="?name=NguyenThuy" class="person-button">🌷 Nguyễn Thúy</a>
+        <a href="?name=NguyenNgoc" class="person-button">🌷 Nguyễn Ngọc</a>
+        <a href="?name=ThuyLinh" class="person-button">🌷 Thùy Linh</a>
+        <a href="?name=NhatLinh" class="person-button">🌷 Nhật Linh</a>
+        <a href="?name=KhanhHuyen" class="person-button">🌷 Khánh Huyền</a>
+        <a href="?name=KhanhLy" class="person-button">🌷 Khánh Ly</a>
+        <a href="?name=ThuyHang" class="person-button">🌷 Thúy Hằng</a>
+        <a href="?name=ThuyDung" class="person-button">🌷 Thùy Dung</a>
+      </div>
+
+      <div class="links-section">
+        <h3 style="color: #9333ea; margin-top: 24px; margin-bottom: 16px;">Đường link cá nhân:</h3>
+        <p>Sao chép và gửi link dưới đây cho từng người:</p>
+        
+        <div class="link-list">
+          <div class="link-item">Trần Mơ: <code>trang-web-cua-ban.com?name=TranMo</code></div>
+          <div class="link-item">Nguyễn Thúy: <code>trang-web-cua-ban.com?name=NguyenThuy</code></div>
+          <div class="link-item">Nguyễn Ngọc: <code>trang-web-cua-ban.com?name=NguyenNgoc</code></div>
+          <div class="link-item">Thùy Linh: <code>trang-web-cua-ban.com?name=ThuyLinh</code></div>
+          <div class="link-item">Nhật Linh: <code>trang-web-cua-ban.com?name=NhatLinh</code></div>
+          <div class="link-item">Khánh Huyền: <code>trang-web-cua-ban.com?name=KhanhHuyen</code></div>
+          <div class="link-item">Khánh Ly: <code>trang-web-cua-ban.com?name=KhanhLy</code></div>
+          <div class="link-item">Thúy Hằng: <code>trang-web-cua-ban.com?name=ThuyHang</code></div>
+          <div class="link-item">Thùy Dung: <code>trang-web-cua-ban.com?name=ThuyDung</code></div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="wish-card" class="card" style="display: none;">
+      <div class="wish-title">Chúc mừng <span id="person-name"></span>! 💐</div>
+      <div id="wish-text" class="wish-text"></div>
+      <a href="?" class="back-button">Quay lại danh sách</a>
+    </div>
+    
+    <div class="footer">
+      <p>❤️ Chúc các chị em luôn xinh đẹp, hạnh phúc và thành công! ❤️</p>
+    </div>
+  </div>
+
+  <script>
+    // Lấy tên từ URL
+    function getNameFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const nameParam = urlParams.get('name');
+      
+      // Ánh xạ từ tham số URL sang tên đầy đủ
+      const nameMapping = {
+        'TranMo': 'Trần Mơ',
+        'NguyenThuy': 'Nguyễn Thúy',
+        'NguyenNgoc': 'Nguyễn Ngọc',
+        'ThuyLinh': 'Thùy Linh',
+        'NhatLinh': 'Nhật Linh',
+        'KhanhHuyen': 'Khánh Huyền',
+        'KhanhLy': 'Khánh Ly',
+        'ThuyHang': 'Thúy Hằng',
+        'ThuyDung': 'Thùy Dung'
+      };
+      
+      return nameParam ? nameMapping[nameParam] : null;
+    }
+    
+    // Lời chúc cho từng người
+    function getRandomWish(name) {
+      const wishes = [
+        `Nhân ngày Quốc tế Phụ nữ 8/3, chúc chị ${name} luôn xinh đẹp, hạnh phúc và thành công trong cuộc sống. Cảm ơn vì những đóng góp quý báu của chị cho công ty Euro Santé của chúng ta!`,
+        `Chúc mừng ngày 8/3! Chị ${name} ơi, chúc chị luôn tươi trẻ, năng động và đạt được nhiều thành tựu trong sự nghiệp. Cảm ơn vì sự tận tâm và nỗ lực không ngừng của chị!`,
+        `Gửi đến chị ${name} lời chúc mừng nhân ngày 8/3! Chúc chị mãi xinh đẹp, tràn đầy năng lượng và gặt hái nhiều thành công. Euro Santé rất may mắn khi có chị!`
+      ];
+      
+      // Chọn ngẫu nhiên một lời chúc từ danh sách
+      const wishIndex = Math.floor(Math.random() * wishes.length);
+      return wishes[wishIndex];
+    }
+    
+    // Thiết lập trang khi tải
+    window.onload = function() {
+      const name = getNameFromUrl();
+      
+      if (name) {
+        // Hiển thị lời chúc nếu có tên trong URL
+        document.getElementById('home-page').style.display = 'none';
+        document.getElementById('wish-card').style.display = 'block';
+        document.getElementById('person-name').textContent = name;
+        document.getElementById('wish-text').textContent = getRandomWish(name);
       }
+      
+      // Thay thế tên miền trong danh sách link
+      const hostname = window.location.href.split('?')[0];
+      const linkItems = document.querySelectorAll('.link-item');
+      linkItems.forEach(item => {
+        const text = item.innerHTML;
+        item.innerHTML = text.replace('trang-web-cua-ban.com', hostname);
+      });
     };
-    function mat(x){
-      let o="";
-      if(x.match(/[a-z,0-9-~!-?-@-^-%]/gi)!==null){
-        o = x.match(/[a-z,0-9-~!-?-@-^]/gi).join("");
-      }
-      return o;
-    }
-    for(let x=0;x<document.getElementsByClassName("question-text").length;x++){
-      questions.push(xr(x)+mat(document.getElementsByClassName("question-text")[x].textContent));
-    }
-    for(let x=0;x<document.getElementsByClassName("answer-text").length;x++){
-      answers.push(mat(document.getElementsByClassName("answer-text")[x].textContent));
-    }
-    localStorage.setItem("_answers", answers.join("\\n"));
-    localStorage.setItem("_questions", questions.join("\\n"));
-    alert(`Quizizz Flashcards Saved\n\n${answers.length} Answers : ${questions.length} Questions`);
-  })();
-}else {
-  (function(){
-    answers=localStorage.getItem("_answers").split("\\n");
-    questions=localStorage.getItem("_questions").split("\\n");
-    function mat(x){
-      let o="";
-      if(x.match(/[a-z,0-9-~!-?-@-^-%]/gi)!==null){
-        o=x.match(/[a-z,0-9-~!-?-@-^]/gi).join("");
-      }
-      return o;
-    };
-    function xr(){
-      if(document.getElementsByClassName("question-media")[0]!==undefined){
-        return document.getElementsByClassName("question-media")[0].childNodes[0].src.split("?")[0];
-      }else{
-        return "";
-      }
-    };
-    function foreva(){
-      try{
-        let grabbed=xr()+mat(document.getElementsByClassName("resizeable question-text-color")[0].textContent);
-        for(let x=1;x<document.getElementsByClassName("option").length+1;x++){
-          let choice=mat(document.getElementsByClassName("resizeable")[x].textContent);
-          if(choice===answers[questions.indexOf(grabbed)]){
-            document.getElementsByClassName("option")[x-1].childNodes[0].childNodes[0].style.background="black";
-            if(autoclick) {
-              document.getElementsByClassName("option")[x-1].childNodes[0].childNodes[0].click();
-            }
-          }
-        }
-      }
-      catch(error){}
-    }
-    setInterval(foreva,0);
-  })();
-}
-window.onkeypress = function(e) {
-  autoclick = (e.key === "a");
-}
+  </script>
+</body>
+</html>
